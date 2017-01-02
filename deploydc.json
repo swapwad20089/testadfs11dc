@@ -11,14 +11,11 @@
     "adminPassword": {
       "type": "securestring"
     },
-    "vmNamePrefix": {
-      "type": "string"
+    "vmdcNamePrefix": {
+      "type": "array"
     },
     "vmSize": {
       "type": "string"
-    },
-    "vmCount": {
-      "type": "int"
     },
     "storageAccountNamePrefix": {
       "type": "string"
@@ -28,11 +25,11 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[concat(parameters('vmNamePrefix'),copyIndex(1))]",
+      "name": "[parameters('vmdcNamePrefix')]",
       "location": "[parameters('location')]",
       "copy": {
         "name": "addcCopy",
-        "count": "[parameters('vmCount')]"
+        "count": "[length(parameters('vmdcNamePrefix'))]"
       },
       "properties": {
         "hardwareProfile": {
