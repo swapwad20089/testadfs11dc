@@ -28,7 +28,7 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('vmwapNamePrefix')[copyIndex()]]",
+      "name": "[parameters('vmwapNamePrefix')]",
       "location": "[parameters('location')]",
       "copy": {
         "name": "addcCopy",

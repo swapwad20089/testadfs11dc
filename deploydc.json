@@ -25,7 +25,7 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('vmdcNamePrefix')[copyIndex()]]",
+      "name": "[parameters('vmdcNamePrefix')]",
       "location": "[parameters('location')]",
       "copy": {
         "name": "addcCopy",
