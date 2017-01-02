@@ -2,5 +2,144 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+      "location": {
+      "value": "Westus"
+      }
+    },
+    "storageAccountType": {
+       "value" :"Standard_LRS"
+      },
+    "virtualNetworkUsage": {
+      "value":"new"
+      },
+    "virtualNetworkName": {
+      "value":"adfs-infra-vnet"
+    },
+    "virtualNetworkResourceGroupName": {
+      "value": "swaptestadfsrg"
+    },
+    "virtualNetworkAddressRange": {
+      "value": "10.0.0.0/16"
+    },
+    "internalSubnetName": {
+      "value": "Internal-sn"
+    },
+    "internalSubnetAddressRange": {
+      "value": "10.0.0.0/24"
+    },
+    "dmzSubnetAddressRange": {
+      "value": "10.0.1.0/24"
+    },
+    "dmzSubnetName": {
+      "value": "DMZ-sn"
+    },
+    "addc01servername": {
+      "value": "addcserver1"
+    },
+    "addc02servername": {
+      "value": "addcserver2"
+    },
+    "addc03servername": {
+      "value": "addcserver3"
+    },
+    "addc04servername": {
+      "value": "addcserver4"
+    },
+    "addc05servername": {
+      "value": "addcserver5"
+    },
+    "addc06servername": {
+      "value": "addcserver6"
+    },
+    "addc07servername": {
+      "value": "addcserver7"
+    },
+    "addc08servername": {
+      "value": "addcserver8"
+    },
+    "addc09servername": {
+      "value": "addcserver9"
+    },
+    "addc10servername": {
+      "value": "addcserver10"
+    },
+    "addc11servername": {
+      "value": "addcserver11"
+    },
+    "addc01NicIPAddress": {
+      "value": "10.0.0.101"
+    },
+    "addc02NicIPAddress": {
+      "value": "10.0.0.102"
+    },
+    "addc03NicIPAddress": {
+      "value": "10.0.0.103"
+    },
+    "addc04NicIPAddress": {
+      "value": "10.0.0.104"
+    },
+    "addc05NicIPAddress": {
+      "value": "10.0.0.105"
+    },
+    "addc06NicIPAddress": {
+      "value": "10.0.0.106"
+    },
+    "addc07NicIPAddress": {
+      "value": "10.0.0.107"
+    },
+    "addc08NicIPAddress": {
+      "value": "10.0.0.108"
+    },
+    "addc09NicIPAddress": {
+      "Value": "10.0.0.109"
+    },
+    "addc10NicIPAddress": {
+      "Value": "10.0.0.110"
+    },
+    "addc11NicIPAddress": {
+      "Value": "10.0.0.111"
+    },
+    "adfs01NicIPAddress": {
+      "Value": "10.0.0.201"
+    },
+    "adfs02NicIPAddress": {
+      "Value": "10.0.0.202"
+    },
+    "wap01NicIPAddress": {
+      "Value": "10.0.1.101"
+    },
+    "wap02NicIPAddress": {
+      "Value": "10.0.1.102"
+    },
+    "adfsLoadBalancerPrivateIpAddress": {
+      "Value": "10.0.0.200"
+    },
+    "adfs01servername": {
+      "Value": "adfsserver1"
+    },
+    "adfs02servername": {
+      "Value": "adfsserver2"
+    },
+    "wap01servername": {
+      "Value": "wapserver1"
+    },
+    "wap02servername": {
+      "Value": "wapserver2"
+    },
+    "addcVMsSize": {
+      "Value": "Standard_A1"
+    },
+    "adfsVMsSize": {
+      "Value": "Standard_A1"
+    },
+    "wapVMsSize": {
+      "Value": "Standard_A1"
+    },
+    "adminUsername": {
+      "value":"swapnil"
+    },
+    "adminPassword": {
+      "value":"Password@123"
     }
+  },
 }
