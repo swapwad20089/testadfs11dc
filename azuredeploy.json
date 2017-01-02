@@ -580,10 +580,10 @@
               "[concat(parameters('addc09servername'),'1-nic')]",
               "[concat(parameters('addc10servername'),'1-nic')]",
               "[concat(parameters('addc11servername'),'1-nic')]",
-              "[concat(parameters('adfsVmNamePrefix'),'1-nic')]",
-              "[concat(parameters('adfsVmNamePrefix'),'2-nic')]",
-              "[concat(parameters('wapVmNamePrefix'),'1-nic')]",
-              "[concat(parameters('wapVmNamePrefix'),'2-nic')]"
+              "[concat(parameters('adfs01servername'),'1-nic')]",
+              "[concat(parameters('adfs02servername'),'2-nic')]",
+              "[concat(parameters('wap01servername'),'1-nic')]",
+              "[concat(parameters('wap02servername'),'2-nic')]"
             ]
           },
           "subnetIds": {
