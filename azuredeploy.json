@@ -1080,7 +1080,7 @@
             "value": "[parameters('adminPassword')]"
           },
           "vmNamePrefix": {
-            "value": "[parameters('adfsVmNamePrefix')]"
+            "value": "[parameters('adfs01serverName')]"
           },
           "vmSize": {
             "value": "[parameters('adfsVMsSize')]"
@@ -1121,7 +1121,7 @@
             "value": "[parameters('adminPassword')]"
           },
           "vmNamePrefix": {
-            "value": "[parameters('adfsVmNamePrefix')]"
+            "value": "[parameters('adfs02serverName')]"
           },
           "vmSize": {
             "value": "[parameters('adfsVMsSize')]"
@@ -1162,7 +1162,7 @@
             "value": "[parameters('adminPassword')]"
           },
           "vmNamePrefix": {
-            "value": "[parameters('wapVmNamePrefix')]"
+            "value": "[parameters('wap01serverName')]"
           },
           "vmSize": {
             "value": "[parameters('wapVMsSize')]"
@@ -1203,7 +1203,7 @@
             "value": "[parameters('adminPassword')]"
           },
           "vmNamePrefix": {
-            "value": "[parameters('wapVmNamePrefix')]"
+            "value": "[parameters('wap02serverName')]"
           },
           "vmSize": {
             "value": "[parameters('wapVMsSize')]"
