@@ -25,7 +25,7 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('vmdcNamePrefix')]",
+      "name": "[concat(parameters('vmdcNamePrefix')[copyIndex()]]",
       "location": "[parameters('location')]",
       "copy": {
         "name": "addcCopy",
@@ -36,7 +36,7 @@
           "vmSize": "[parameters('vmSize')]"
         },
         "osProfile": {
-          "computerName": "[concat(parameters('vmNamePrefix'),copyIndex(1))]",
+          "computerName": "[parameters('vmNamePrefix')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
@@ -48,18 +48,18 @@
             "version": "latest"
           },
           "osDisk": {
-            "name": "[concat(parameters('vmNamePrefix'),copyIndex(1),'-osdisk')]",
+            "name": "[concat(parameters('vmNamePrefix'),[copyIndex()],'-osdisk')]",
             "vhd": {
-              "uri": "[concat('http://',parameters('storageAccountNamePrefix'),copyIndex(1),'.blob.core.windows.net/vhds/',parameters('vmNamePrefix'),copyIndex(1),'-osdisk.vhd')]"
+              "uri": "[concat('http://',parameters('storageAccountNamePrefix'),'1.blob.core.windows.net/vhds/',parameters('vmNamePrefix'),'-osdisk.vhd')]"
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
           },
           "dataDisks": [
             {
-              "name": "[concat(parameters('vmNamePrefix'),'-datadisk')]",
+              "name": "[concat(parameters('vmNamePrefix'),[copyIndex()],'-datadisk')]",
               "vhd": {
-                "uri": "[concat('http://',parameters('storageAccountNamePrefix'),'1.blob.core.windows.net/vhds/', parameters('vmNamePrefix'),copyIndex(1),'-datadisk.vhd')]"
+                "uri": "[concat('http://',parameters('storageAccountNamePrefix'),'1.blob.core.windows.net/vhds/', parameters('vmNamePrefix'),'-datadisk.vhd')]"
               },
               "caching": "None",
               "createOption": "empty",
@@ -71,7 +71,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(parameters('vmNamePrefix'),copyIndex(1),'-nic'))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(parameters('vmNamePrefix'),'1-nic'))]"
             }
           ]
         },
