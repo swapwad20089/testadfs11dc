@@ -20,9 +20,6 @@
     "availabilitySetName": {
       "type": "string"
     },
-    "vmCount": {
-      "type": "int"
-    },
     "storageAccountNamePrefix": {
       "type": "string"
     }

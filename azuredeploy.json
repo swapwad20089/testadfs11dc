@@ -664,7 +664,7 @@
             "value": "[parameters('adminPassword')]"
           },
           "vmdcNamePrefix": {
-                  "value": [
+            "value": [
               "[parameters('addc01servername')]",
               "[parameters('addc02servername')]",
               "[parameters('addc03servername')]",
@@ -677,7 +677,7 @@
               "[parameters('addc10servername')]",
               "[parameters('addc11servername')]"
             ]
-                },
+          },
           "vmSize": {
             "value": "[parameters('addcVMsSize')]"
           },
