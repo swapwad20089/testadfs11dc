@@ -12,13 +12,13 @@
       "type": "securestring"
     },
     "vmdcNamePrefix": {
-      "type": "string"
+      "type": "array"
     },
     "vmadfsNamePrefix": {
-      "type": "string"
+      "type": "array"
     },
     "vmwapNamePrefix": {
-      "type": "string"
+      "type": "array"
     },    
     "vmSize": {
       "type": "string"
