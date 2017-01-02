@@ -1,6 +1,6 @@
 # testadfs11dc
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/swapwad20089/testadfs11dc/master/azuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fswapwad20089%2Ftestadfs11dc%2Fmaster%2Fazuredeploy.json" target="_blank">
     
 
 <img src="http://azuredeploy.net/deploybutton.png"/>
