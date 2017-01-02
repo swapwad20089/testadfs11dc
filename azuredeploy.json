@@ -383,7 +383,9 @@
     "deployNicsUrl": "[concat(variables('baseUrl'),'/deployNics2.json')]",
     "deployNsgsUrl": "[concat(variables('baseUrl'),'/deployNsgs.json')]",
     "deploydcUrl": "[concat(variables('baseUrl'),'/deploydc.json')]",
-    "deployVmsUrl": "[concat(variables('baseUrl'),'/deployVms.json')]"
+    "deployVmsUrl": "[concat(variables('baseUrl'),'/deployVms.json')]",
+    "deployadfsVmsUrl": "[concat(variables('baseUrl'),'/deployadfsVms.json')]",
+    "deploywapVmsUrl": "[concat(variables('baseUrl'),'/deploywapVms.json')]"
   },
   "resources": [
     {
@@ -695,7 +697,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[variables('deployVmsUrl')]",
+          "uri": "[variables('deployadfsVmsUrl')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -736,7 +738,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[variables('deployVmsUrl')]",
+          "uri": "[variables('deploywapVmsUrl')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
