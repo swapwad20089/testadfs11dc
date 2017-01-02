@@ -1,0 +1,95 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "nicNames": {
+      "type": "array"
+    },
+    "nicwapNames": {
+       "type": "array"
+    },
+    "ipAddresses": {
+      "type": "array"
+    },
+    "ipwapAddresses": {
+      "type": "array"
+    },
+    "subnetIds": {
+      "type": "array"
+    },
+    "adfsBeAddressPoolID": {
+      "type": "string"
+    },
+    "wapBeAddressPoolID": {
+      "type": "string"
+    },
+    "wapRDPNATRuleIDs": {
+      "type": "array"
+    }
+  },
+  "resources": [
+
+{
+      "comments": "[parameters("nicNames")]",
+      "name": "[concat(parameters('nicNames')[copyIndex()])]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "location": "[parameters('location')]",
+      "apiVersion": "2015-06-15",
+      "copy": { 
+         "name": "NICcardcopy", 
+         "count": "[length(parameters('nicNames'))]" 
+      }, 
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Static",
+              "privateIPAddress": "[parameters('ipAddresses')[copyIndex()]]",
+              "subnet": {
+                "id": "[parameters('subnetIds')[0]]"
+              }
+            }
+          }
+        ]
+      }
+    },
+
+    {
+      "comments": "[parameters("nicwapnames")]",
+      "name": "[concat(parameters('nicwapNames')[copyIndex()])]",
+      "type": "Microsoft.Network/networkInterfaces",
+      "location": "[parameters('location')]",
+      "apiVersion": "2015-06-15",
+      "copy": { 
+         "name": "NICcardcopy", 
+         "count": "[length(parameters('nicwapNames'))]" 
+      },
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Static",
+              "privateIPAddress": "[parameters('ipwapAddresses')[copyIndex()]]",
+              "subnet": {
+                "id": "[parameters('subnetIds')[1]]"
+              },
+              "loadBalancerBackendAddressPools": [
+                {
+                  "id": "[parameters('wapBEAddressPoolID')]"
+                }
+              ],
+              "loadBalancerInboundNatRules": [
+                {
+                  "id": "[parameters('wapRDPNATRuleIDs')[copyIndex()]]"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },

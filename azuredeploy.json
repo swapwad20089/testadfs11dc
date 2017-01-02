@@ -380,7 +380,7 @@
     "lbPublicIpResourceIds": [
       "[resourceId(concat('Microsoft.Network','/','publicIPAddresses'),variables('publicIpName'))]"
     ],
-    "deployNicsUrl": "[concat(variables('baseUrl'),'/deployNics.json')]",
+    "deployNicsUrl": "[concat(variables('baseUrl'),'/deployNics2.json')]",
     "deployNsgsUrl": "[concat(variables('baseUrl'),'/deployNsgs.json')]",
     "deploydcUrl": "[concat(variables('baseUrl'),'/deploydc.json')]",
     "deployVmsUrl": "[concat(variables('baseUrl'),'/deployVms.json')]"
@@ -562,7 +562,11 @@
               "[parameters('addc10NicIPAddress')]",
               "[parameters('addc11NicIPAddress')]",
               "[parameters('adfs01NicIPAddress')]",
-              "[parameters('adfs02NicIPAddress')]",
+              "[parameters('adfs02NicIPAddress')]"
+            ]
+          },
+          "ipwapaddresses": {
+            "value": [
               "[parameters('wap01NicIPAddress')]",
               "[parameters('wap02NicIPAddress')]"
             ]
@@ -581,7 +585,11 @@
               "[concat(parameters('addc10servername'),'1-nic')]",
               "[concat(parameters('addc11servername'),'1-nic')]",
               "[concat(parameters('adfs01servername'),'1-nic')]",
-              "[concat(parameters('adfs02servername'),'2-nic')]",
+              "[concat(parameters('adfs02servername'),'2-nic')]"
+            ]
+          },
+          "nicwapNames": {
+            "value": [
               "[concat(parameters('wap01servername'),'1-nic')]",
               "[concat(parameters('wap02servername'),'2-nic')]"
             ]
