@@ -384,8 +384,8 @@
     "deployNsgsUrl": "[concat(variables('baseUrl'),'/deployNsgs.json')]",
     "deploydcUrl": "[concat(variables('baseUrl'),'/deploydc.json')]",
     "deployVmsUrl": "[concat(variables('baseUrl'),'/deployVms.json')]",
-    "deployadfsVmsUrl": "[concat(variables('baseUrl'),'/deployadfsVms.json')]",
-    "deploywapVmsUrl": "[concat(variables('baseUrl'),'/deploywapVms.json')]"
+    "deployadfsVmsUrl": "[concat(variables('baseUrl'),'/deployadfsvms.json')]",
+    "deploywapVmsUrl": "[concat(variables('baseUrl'),'/deploywapvms.json')]"
   },
   "resources": [
     {
