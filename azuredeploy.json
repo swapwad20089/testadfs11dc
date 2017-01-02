@@ -676,7 +676,7 @@
               "[parameters('addc11servername')]"
             ]
                 },
-          "vmdcSize": {
+          "vmSize": {
             "value": "[parameters('addcVMsSize')]"
           },
           "storageAccountNamePrefix": {
