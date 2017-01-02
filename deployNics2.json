@@ -33,7 +33,6 @@
   "resources": [
 
 {
-      "comments": "[parameters("nicNames")]",
       "name": "[concat(parameters('nicNames')[copyIndex()])]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[parameters('location')]",
@@ -59,7 +58,6 @@
     },
 
     {
-      "comments": "[parameters("nicwapnames")]",
       "name": "[concat(parameters('nicwapNames')[copyIndex()])]",
       "type": "Microsoft.Network/networkInterfaces",
       "location": "[parameters('location')]",
