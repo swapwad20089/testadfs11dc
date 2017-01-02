@@ -585,13 +585,13 @@
               "[concat(parameters('addc10servername'),'1-nic')]",
               "[concat(parameters('addc11servername'),'1-nic')]",
               "[concat(parameters('adfs01servername'),'1-nic')]",
-              "[concat(parameters('adfs02servername'),'2-nic')]"
+              "[concat(parameters('adfs02servername'),'1-nic')]"
             ]
           },
           "nicwapNames": {
             "value": [
               "[concat(parameters('wap01servername'),'1-nic')]",
-              "[concat(parameters('wap02servername'),'2-nic')]"
+              "[concat(parameters('wap02servername'),'1-nic')]"
             ]
           },
           "subnetIds": {
@@ -639,425 +639,7 @@
       }
     },
     {
-      "name": "addc01serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc01servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc02serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc02servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-           "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc03serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc03servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc04serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc04servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc05serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc05servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc06serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc06servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc07serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc07servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc08serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc08servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc09serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc09servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc10serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc10servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "addc11serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deploydcUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('addc11servername')]"
-          },
-          "vmSize": {
-            "value": "[parameters('addcVMsSize')]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "adfs01serverDeployment",
+      "name": "addcVmsDeployment",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
@@ -1079,18 +661,65 @@
           "adminPassword": {
             "value": "[parameters('adminPassword')]"
           },
-          "vmNamePrefix": {
-            "value": "[parameters('adfs01serverName')]"
+          "vmdcNamePrefix": {
+                  "value": [
+              "[parameters('addc01servername')]",
+              "[parameters('addc02servername')]",
+              "[parameters('addc03servername')]",
+              "[parameters('addc04servername')]",
+              "[parameters('addc05servername')]",
+              "[parameters('addc06servername')]",
+              "[parameters('addc07servername')]",
+              "[parameters('addc08servername')]",
+              "[parameters('addc09servername')]",
+              "[parameters('addc10servername')]",
+              "[parameters('addc11servername')]"
+            ]
+                },
+          "vmdcSize": {
+            "value": "[parameters('addcVMsSize')]"
           },
+          "storageAccountNamePrefix": {
+            "value": "[variables('storageAccountNamePrefix')]"
+          }
+        }
+      }
+    },
+    {
+      "name": "adfsVmsDeployment",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "Microsoft.Resources/deployments/nicsDeployment"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('deployVmsUrl')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "location": {
+            "value": "[parameters('location')]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "vmadfsNamePrefix": {
+                  "value": [
+              "[parameters('adfs01servername')]",
+              "[parameters('adfs02servername')]"
+            ]
+           },
           "vmSize": {
             "value": "[parameters('adfsVMsSize')]"
           },
           "availabilitySetName": {
             "value": "[variables('availabilitySetNames')[0]]"
           },
-          "vmCount": {
-            "value": 1
-          },
           "storageAccountNamePrefix": {
             "value": "[variables('storageAccountNamePrefix')]"
           }
@@ -1098,7 +727,7 @@
       }
     },
     {
-      "name": "adfs02serverDeployment",
+      "name": "wapVmsDeployment",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
@@ -1120,49 +749,11 @@
           "adminPassword": {
             "value": "[parameters('adminPassword')]"
           },
-          "vmNamePrefix": {
-            "value": "[parameters('adfs02serverName')]"
-          },
-          "vmSize": {
-            "value": "[parameters('adfsVMsSize')]"
-          },
-          "availabilitySetName": {
-            "value": "[variables('availabilitySetNames')[0]]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    },
-    {
-      "name": "wap01serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deployVmsUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('wap01serverName')]"
+          "vmwapNamePrefix": {
+            "value": [
+              "[parameters('wap01servername')]",
+              "[parameters('wap02servername')]"
+            ]
           },
           "vmSize": {
             "value": "[parameters('wapVMsSize')]"
@@ -1170,55 +761,11 @@
           "availabilitySetName": {
             "value": "[variables('availabilitySetNames')[1]]"
           },
-          "vmCount": {
-            "value": 1
-          },
           "storageAccountNamePrefix": {
             "value": "[variables('storageAccountNamePrefix')]"
           }
         }
       }
-    },
-    {
-      "name": "wap02serverDeployment",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
-      "dependsOn": [
-        "Microsoft.Resources/deployments/nicsDeployment"
-      ],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('deployVmsUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "location": {
-            "value": "[parameters('location')]"
-          },
-          "adminUsername": {
-            "value": "[parameters('adminUsername')]"
-          },
-          "adminPassword": {
-            "value": "[parameters('adminPassword')]"
-          },
-          "vmNamePrefix": {
-            "value": "[parameters('wap02serverName')]"
-          },
-          "vmSize": {
-            "value": "[parameters('wapVMsSize')]"
-          },
-          "availabilitySetName": {
-            "value": "[variables('availabilitySetNames')[1]]"
-          },
-          "vmCount": {
-            "value": 1
-          },
-          "storageAccountNamePrefix": {
-            "value": "[variables('storageAccountNamePrefix')]"
-          }
-        }
-      }
-    }
+    }, 
   ]
 }
