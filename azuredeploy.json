@@ -552,15 +552,15 @@
             "value": [
               "[parameters('addc01NicIPAddress')]",
               "[parameters('addc02NicIPAddress')]",
-              "[parameters('addc03NicIPAddress')]"
-              "[parameters('addc04NicIPAddress')]"
-              "[parameters('addc05NicIPAddress')]"
-              "[parameters('addc06NicIPAddress')]"
-              "[parameters('addc07NicIPAddress')]"
-              "[parameters('addc08NicIPAddress')]"
-              "[parameters('addc09NicIPAddress')]"
-              "[parameters('addc10NicIPAddress')]"
-              "[parameters('addc11NicIPAddress')]"
+              "[parameters('addc03NicIPAddress')]",
+              "[parameters('addc04NicIPAddress')]",
+              "[parameters('addc05NicIPAddress')]",
+              "[parameters('addc06NicIPAddress')]",
+              "[parameters('addc07NicIPAddress')]",
+              "[parameters('addc08NicIPAddress')]",
+              "[parameters('addc09NicIPAddress')]",
+              "[parameters('addc10NicIPAddress')]",
+              "[parameters('addc11NicIPAddress')]",
               "[parameters('adfs01NicIPAddress')]",
               "[parameters('adfs02NicIPAddress')]",
               "[parameters('wap01NicIPAddress')]",
