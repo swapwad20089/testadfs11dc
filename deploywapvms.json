@@ -28,7 +28,7 @@
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('vmwapNamePrefix')]",
+      "name": "[concat(parameters('vmwapNamePrefix'),[copyIndex()]]",
       "location": "[parameters('location')]",
       "copy": {
         "name": "addcCopy",
@@ -42,7 +42,7 @@
           "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySetName'))]"
         },
         "osProfile": {
-          "computerName": "[parameters('vmwapNamePrefix')]",
+          "computerName": "[parameters('vmwapNamePrefix')[copyIndex()]]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
