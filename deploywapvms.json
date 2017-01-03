@@ -42,7 +42,7 @@
           "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySetName'))]"
         },
         "osProfile": {
-          "computerName": "[parameters('vmwapNamePrefix')[copyIndex()]]",
+          "computerName": "[(parameters('vmwapNamePrefix')[copyIndex()])]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },

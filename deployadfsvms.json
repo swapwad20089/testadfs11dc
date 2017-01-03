@@ -42,7 +42,7 @@
           "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySetName'))]"
         },
         "osProfile": {
-          "computerName": "[parameters('vmadfsNamePrefix')[copyIndex()]]",
+          "computerName": "[(parameters('vmadfsNamePrefix')[copyIndex()])]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },

@@ -36,7 +36,7 @@
           "vmSize": "[parameters('vmSize')]"
         },
         "osProfile": {
-          "computerName": "[parameters('vmdcNamePrefix')[copyIndex()]]",
+          "computerName": "[(parameters('vmdcNamePrefix')[copyIndex()])]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
